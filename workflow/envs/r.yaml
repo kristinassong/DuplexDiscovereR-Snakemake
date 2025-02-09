@@ -1,0 +1,12 @@
+channels:
+  - default
+  - bioconda
+  - conda-forge
+dependencies:
+  - bioconductor-biostrings=2.74.0
+  - r-tidyverse=2.0.0
+  - r-dplyr=1.1.4
+  - r-biocmanager=1.30.25
+  - bioconductor-duplexdiscoverer=1.0.0
+  - bioconductor-rtracklayer=1.66.0
+  - bioconductor-genomicranges=1.58.0

@@ -1,0 +1,33 @@
+__default__:
+  account: def-scottmic
+  mail-user: kristina.song@usherbrooke.ca
+  mail-type: FAIL
+  job-name: "smk_{rule}_{wildcards}"
+  time: 180 # minutes
+  nodes: 1
+  ntasks: 1
+  mem: 32000M
+  cpus-per-task: 8
+  output: results/logs/slurmout/{rule}.{wildcards}.out
+  error: results/logs/slurmout/{rule}.{wildcards}.err
+
+
+trim3:
+  time: 600
+  cpus-per-task: 32
+  mem: 32G
+
+trim5:
+  time: 600
+  cpus-per-task: 32
+  mem: 32G
+
+STAR_index:
+  cpus-per-task: 32
+  mem: 128G
+  time: 600
+
+STAR_align:
+  cpus-per-task: 32
+  mem: 128G
+  time: 600
