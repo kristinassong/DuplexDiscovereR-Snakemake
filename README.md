@@ -1,7 +1,7 @@
 # NOTE
 This pipeline analyzes RNA crosslinking and proximity ligation data using DuplexDiscovereR and the [Snakemake workflow management system](https://snakemake.readthedocs.io/en/stable/) 🐍. 
 
-🌟 Reference 🌟
+🌟 Reference 🌟<br/>
 https://bioconductor.org/packages/release/bioc/manuals/DuplexDiscovereR/man/DuplexDiscovereR.pdf
 
 ## Installing Snakemake
