@@ -31,3 +31,8 @@ STAR_align:
   cpus-per-task: 32
   mem: 128G
   time: 600
+
+DuplexDiscoverer:
+  cpus-per-task: 32
+  mem: 128G
+  time: 600

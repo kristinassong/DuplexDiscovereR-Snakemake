@@ -1,0 +1,9 @@
+# Snakemake stuff
+.snakemake/
+resources/CoCo/
+resources/correct*
+resources/fastq/
+resources/genome_rna.fa
+resources/icSHAPE/
+resources/preprocessed_fastq/
+results/
