@@ -72,7 +72,7 @@ This Snakemake workflow includes the following datasets. The datasets/samples to
 | SRR3361017 | HEK293T     |
 
 The FASTQ files can be downloaded using:
-`download_wget.smk`: Both the `SRRXXXXXXX` run number and the download URL (Available on [SRA Explorer](https://sra-explorer.info/#)) are required as input. Add the run number to `config/config.yaml` and the URL to `resources/sra_ids.txt`.
+- `download_wget.smk`: Both the `SRRXXXXXXX` run number and the download URL (Available on [SRA Explorer](https://sra-explorer.info/#)) are required as input. Add the run number to `config/config.yaml` and the URL to `resources/sra_ids.txt`.
 
 We recommend verifying the download of all required datasets before moving on to the next steps of the pipeline.
 
