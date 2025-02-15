@@ -7,4 +7,5 @@ dependencies:
   - bedtools=2.29.2
   - samtools=1.10
   - pandas=0.24.2
-  - numpy=1.17.2 
+  - numpy=1.17.2
+  - pyranges=0.1.2

@@ -117,3 +117,23 @@ rule DuplexDiscoverer:
         "Run DuplexDiscovereR to detect RNA-RNA interactions."
     script:
         "../scripts/DuplexDiscoverer.R"
+
+
+rule merge_dgs:
+    input:
+        paris = expand(rules.DuplexDiscoverer.output.dg,accession=config['PARIS'],experiment=['PARIS']),
+        paris2 = expand(rules.DuplexDiscoverer.output.dg,accession=config['PARIS2'],experiment=['PARIS2']),
+        splash = expand(rules.DuplexDiscoverer.output.dg,accession=config['SPLASH'],experiment=['SPLASH']),
+        ligr_seq = expand(rules.DuplexDiscoverer.output.dg,accession=config['LIGR_seq'],experiment=['LIGR_seq'])
+    params:
+        samples = "resources/samples.txt",
+        outdir = "results/duplexdiscoverer",
+        gtf = rules.coco_ca.output.gtf_corrected
+    output:
+        dg = "results/duplexdiscoverer/all_dgs.tsv"
+    conda:
+        "../envs/coco.yaml"
+    message:
+        "Combine all DGs into one file."
+    script:
+        "../scripts/merge_dgs.py"
