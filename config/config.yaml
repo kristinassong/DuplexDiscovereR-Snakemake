@@ -1,4 +1,4 @@
-genome_gtf: /home/kris98/projects/def-scottmic/kris98/annotation_datasets/Homo_sapiens.GRCh38.110_snoRNAs_tRNAs.gtf
+genome_gtf: /home/kris98/projects/def-scottmic/kris98/annotation_datasets/Homo_sapiens.GRCh38.110_snoRNAs_tRNAs_customrRNAs_pseudorRNAs.gtf
 genome_fasta: /home/kris98/projects/def-scottmic/kris98/annotation_datasets/Homo_sapiens.GRCh38.110.dna.primary_assembly.fa
 
 PARIS: ['SRR2814761','SRR2814762','SRR2814763','SRR2814764','SRR2814765']
