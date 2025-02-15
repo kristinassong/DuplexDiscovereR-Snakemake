@@ -1,7 +1,8 @@
-# 🥐 NOTE 🥐
-This is a modified version of the CRSSANT pipeline implemented using the [Snakemake workflow management system](https://snakemake.readthedocs.io/en/stable/) 🐍. 
+# NOTE
+This pipeline analyzes RNA crosslinking and proximity ligation data using DuplexDiscovereR and the [Snakemake workflow management system](https://snakemake.readthedocs.io/en/stable/) 🐍. 
 
-🌟 Reference: https://github.com/zhipenglu/CRSSANT; https://github.com/whl-usc/rna2d3d 🌟
+🌟 Reference 🌟<br/>
+https://bioconductor.org/packages/release/bioc/manuals/DuplexDiscovereR/man/DuplexDiscovereR.pdf
 
 ## Installing Snakemake
 Please follow the [instructions](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) to install the Snakemake workflow management tool. We recommend using `Conda/Mamba` to install Snakemake.
@@ -71,18 +72,17 @@ This Snakemake workflow includes the following datasets. The datasets/samples to
 | SRR3361013 | HEK293T     |
 | SRR3361017 | HEK293T     |
 
-The FASTQ files can be downloaded in two different ways:
-1. `download_sra_toolkit.smk`: Only the `SRRXXXXXXX` run number is needed as input. Add the run number to `config/config.yaml` for the corresponding experiment. Note that multiple runs of the Snakemake workflow may be required to successfully download all the datasets.
-2. `download_wget.smk`: Both the `SRRXXXXXXX` run number and the download url (Available on [SRA Explorer](https://sra-explorer.info/#)) are required as input. Add the run number to `config/config.yaml` and the url to `resources/sra_ids.txt`.
+The FASTQ files can be downloaded using:
+- `download_wget.smk`: Both the `SRRXXXXXXX` run number and the download URL (Available on [SRA Explorer](https://sra-explorer.info/#)) are required as input. Add the run number to `config/config.yaml` and the URL to `resources/sra_ids.txt`.
 
-We recommend verifying the download of all required datasets before moving onto the next steps of the CRSSANT pipeline. Make sure to comment out (#) the `.smk` file that you are not using in `Snakefile` (line 17-18).
+We recommend verifying the download of all required datasets before moving on to the next steps of the pipeline.
 
 ## Running the Snakemake workflow
-For a dry-run of this Snakemake workflow, simply run the following code from `CRSSANT/`.
+For a dry-run of this Snakemake workflow, simply run the following code from `DuplexDiscovereR-Snakemake/`.
 ```
 snakemake -n
 ```
-To run this Snakemake workflow, simply run the following code from `CRSSANT/`.
+To run this Snakemake workflow, simply run the following code from `DuplexDiscovereR-Snakemake/`.
 ```
 snakemake --profile profile_slurm
 
@@ -91,4 +91,4 @@ OR
 snakemake --profile profile_local
 ```
 
-Please see below for more details on the CRSSANT pipeline. If you have any specific questions regarding this Snakemake workflow, please contact [Kristina Sungeun Song](mailto:kristina.song@usherbrooke.ca). Questions on the technicalities of CRSSANT should be addressed to the original authors: [Zhang et al. 2022 Genome Research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9104705/).
+If you have any specific questions regarding this Snakemake workflow, please contact [Kristina Sungeun Song](mailto:kristina.song@usherbrooke.ca). Questions on the technicalities of DuplexDiscovereR should be addressed to the original authors.
