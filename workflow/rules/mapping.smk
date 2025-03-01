@@ -128,12 +128,18 @@ rule merge_dgs:
     params:
         samples = "resources/samples.txt",
         outdir = "results/duplexdiscoverer",
-        gtf = rules.coco_ca.output.gtf_corrected
+        gtf = rules.coco_ca.output.gtf_corrected,
+        venv = config['venv']
     output:
-        dg = "results/duplexdiscoverer/all_dgs.tsv"
-    conda:
-        "../envs/coco.yaml"
+        dg = "results/duplexdiscoverer/all_dgs.tsv",
+        raw_dg = "results/duplexdiscoverer/all_dgs_before_merge.tsv"
     message:
         "Combine all DGs into one file."
-    script:
-        "../scripts/merge_dgs.py"
+    shell:
+        "source {params.venv} && "
+        "module load StdEnv/2020 && "
+        "module load scipy-stack/2020a && "
+        "module load bedtools/2.30.0 && "
+        "pip install pyranges && "
+        "pip install pybedtools && "
+        "python3 workflow/scripts/merge_dgs.py {params.samples} {params.outdir} {params.gtf} $SLURM_TMPDIR"
