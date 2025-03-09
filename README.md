@@ -7,7 +7,10 @@ https://bioconductor.org/packages/release/bioc/manuals/DuplexDiscovereR/man/Dupl
 ## Installing Snakemake
 Please follow the [instructions](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) to install the Snakemake workflow management tool. We recommend using `Conda/Mamba` to install Snakemake.
 
-This Snakemake workflow has been tested with `v7.32.4`.
+This Snakemake workflow has been tested with `v7.32.4` and Python `v3.11.11`.
+
+## Python Virtual Environment Requirement
+A virtual environment is required for the last step of this pipeline when merging duplex groups obtained from various samples. Once installed, please add the path to `config/config.yaml`.
 
 ## Downloading FASTQ files from GEO
 This Snakemake workflow includes the following datasets. The datasets/samples to be included in the workflow can be modified in `config/config.yaml`.
