@@ -19,10 +19,10 @@ rule all:
     input:
         ### STEP 1 ###
         # Download FASTQ files via wget -- profile_local
-        #fq = "resources/fastq/download_status.txt",
+        fq = "resources/fastq/download_status.txt",
         # Git repos -- use profile_local
-        #icSHAPE_git = directory('resources/icSHAPE'),
-        #CoCo_git = directory('resources/CoCo'),
+        icSHAPE_git = directory('resources/icSHAPE'),
+        CoCo_git = directory('resources/CoCo'),
         ### STEP 2 ###
         # FastQC
         PARIS_qc = expand("results/fastqc/{qc_type}/PARIS/{accession}_fastqc.html",accession=config['PARIS'],qc_type=['raw','preprocessed']),
