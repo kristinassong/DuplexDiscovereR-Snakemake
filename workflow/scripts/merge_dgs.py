@@ -137,6 +137,7 @@ df_result.to_csv(os.path.join(outdir,'all_dgs_before_merge.tsv'),sep='\t',index=
 ###### Merge RNA-RNA interactions ######
 # Multiprocessing by chromosome1
 chromo1_list = set(df_result['seqnames1'].values.tolist())
+os.makedirs(os.path.join(outdir,'tmp'),exist_ok=True)
 
 def merge_interactions(chromo1,df_result=df_result):
     print(chromo1)
@@ -234,7 +235,7 @@ def merge_interactions(chromo1,df_result=df_result):
                                                             'gene_type.B': [final_rows_extracted.loc[0,'gene_type.B']]})
 
                                 df_result = pd.concat([df_result,new_merged_row],ignore_index=True)
-    df_result.to_csv(os.path.join(outdir,'chr'+str(chromo1)+'_tmp_all_dgs.tsv'),sep='\t',index=None)
+    df_result.to_csv(os.path.join(outdir,'tmp','chr'+str(chromo1)+'_tmp_all_dgs.tsv'),sep='\t',index=None)
     return df_result
 
 
