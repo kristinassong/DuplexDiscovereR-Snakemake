@@ -94,4 +94,4 @@ OR
 snakemake --profile profile_local
 ```
 
-If you have any specific questions regarding this Snakemake workflow, please contact [Kristina Sungeun Song](mailto:kristina.song@usherbrooke.ca). Questions on the technicalities of DuplexDiscovereR should be addressed to the original authors.
+If you have any specific questions regarding this Snakemake workflow, please contact [Kristina Sungeun Song](mailto:kristina.song@usherbrooke.ca). Questions on the technicalities of DuplexDiscovereR should be addressed to the [original authors](mailto:irmtraud.meyer@cantab.net).
